@@ -1,0 +1,71 @@
+body {
+    background-color: #353336;
+}
+
+#game {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.game-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FA0556;
+    width: 160px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #161618;
+    margin-bottom: 23px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+span {
+    display: flex;
+    align-items: center;
+}
+
+.canvas-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #161618;
+    height: 320px;
+    width: 320px;
+    outline: 10px solid #161618;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iOCIgY3k9IjgiIHI9IjQiIGZpbGw9IiM1MjUwNTMiLz4KPC9zdmc+Cg==");
+    box-shadow: 0 0 40px 10px #161618;
+    border-radius: 5px;
+}
+
+.difficulty {
+    margin-top: 23px;
+    display: flex;
+    justify-content: center;
+
+}
+
+button {
+    width: 160px;
+    height: 50px;
+    margin-bottom: 23px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+#btn-easy {
+    margin-right: 10px;
+    color: #13a50e;
+    background-color: #161618;
+    transition: background 300ms;
+}
+
+#btn-hard {
+    color: #FA0556;
+    background-color: #252527;
+    transition: background 300ms;
+}

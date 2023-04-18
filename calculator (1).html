@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Калькулятор</title>
+		<style>
+			div {
+				padding: 5px;
+				width: 112px;
+				border: 1px solid black;
+			}
+
+			button {
+				margin-bottom: 3px;
+			}
+
+			.num {
+				width: 25px;
+			}
+
+			.operator {
+				width: 25px;
+			}
+
+			.sign {
+				width: 25px;
+			}
+
+			.res_but {
+				background-color: rgb(199, 0, 0); 
+				color: aliceblue; 
+				font-weight: 700;
+				transition: background-color 0.2s linear;
+			}
+
+			.res_but:hover {
+				background-color: rgb(255, 94, 0);
+			}
+
+			.res_but:active {
+				background-color: rgb(12, 184, 26);
+			}
+
+		</style>
+	</head>
+	<body>
+		<h1>Калькулятор</h1>
+		<h2>Клавиатура:</h2>
+		<div>
+			<button onclick="AddSign('1')" class="num">1</button>
+			<button onclick="AddSign('2')" class="num">2</button>
+			<button onclick="AddSign('3')" class="num"> 3</button>
+			<button onclick="AddSign('+')" class="operator">+</button>
+			<br>
+			<button onclick="AddSign('4')" class="num">4</button>
+			<button onclick="AddSign('5')" class="num">5</button>
+			<button onclick="AddSign('6')" class="num">6</button>
+			<button onclick="AddSign('-')" class="operator">-</button>
+			<br>
+			<button onclick="AddSign('7')" class="num">7</button>
+			<button onclick="AddSign('8')" class="num">8</button>
+			<button onclick="AddSign('9')" class="num">9</button>
+			<button onclick="AddSign('*')" class="operator">*</button>
+			<br>
+			<button onclick="AddSign('0')" class="num">0</button>
+			<button onclick="DeleteSign()" id="clear" style="width: 54px;">←</button>
+			<button onclick="AddSign('/')" class="operator">/</button>
+			<br>
+			<button onclick="AddSign('(')" class="sign">(</button>
+			<button onclick="AddSign(')')" class="sign">)</button>
+			<button onclick="AddSign('.')" class="sign">.</button>
+			<button onclick="Calculate()" class="sign">=</button>
+		</div>
+		<br>
+		<br>
+		<button onclick="Calculate()" class="res_but">Получить результат</button>
+		<button onclick="RememberResult()">Запомнить выражение</button>
+		<button onclick="ReturnResult()">Вернуть записанное выражение</button>
+		<hr>
+		<p style="font-size: 15pt;">Результат: <span id="result"></span></p>
+		<button onclick="ClearResult()">Полностью очистить</button>
+		
+		<script>
+			let result = document.getElementById('result');
+			let rem_result = '';
+
+			function AddSign(sign) {
+				result.innerHTML = result.innerHTML + sign; 
+			}
+
+			function DeleteSign(sign) {
+				result.innerHTML = result.innerHTML.slice(0, -1); 
+			}
+
+			function Calculate() {
+				expression = result.innerHTML;	
+
+				try {
+					result.innerHTML = eval(expression);
+					
+				} catch (SyntaxError) {
+					result.innerHTML = 'Введите корректное выражение!';
+				}
+				
+				if (result.innerHTML == 'undefined') {
+					result.innerHTML = 'Введите выражение!';
+				}
+
+			}
+
+			function ClearResult() {
+				result.innerHTML = '';
+			}
+
+			function RememberResult() {
+				rem_result = result.innerHTML;
+			}
+
+			function ReturnResult() {
+				result.innerHTML = rem_result;
+			}
+
+		</script>
+	</body>
+</html>

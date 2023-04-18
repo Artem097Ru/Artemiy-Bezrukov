@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Грокаем форму</title>
+</head>
+<body>
+	<form id="MyForm">
+		<label>Строка</label>
+		<br>
+		<input name="MyString" value=" ">
+		<br>
+		<label>Номер слова</label>
+		<br>
+		<input name="WordNumber" value=0>
+		<br>
+		<button type="submit">Жмякай</button> 
+	</form>
+	<script>
+		const formElement = document.getElementById('MyForm');
+		formElement.addEventListener('submit', (e) => {
+			e.preventDefault();
+			const formData = new FormData(formElement);
+			const MyString = formData.get('MyString'); 
+			const WordNumber = formData.get('WordNumber'); 
+			document.write(WordN(MyString, WordNumber));
+		});
+		function WordN(anyString, n){
+			let stringArray = anyString.trim().split(' ');
+			if(stringArray.length < n) {
+				return '';
+			}
+			else {
+				return '<style> p { background-color: white; font-size: 150%; } p:hover { background-color: #f0f0f0; border-radius: 5px; display:inline; } </style> <p>' + stringArray[n-1] + "</p>";
+			}
+		}
+	</script>
+</body>
+</html>

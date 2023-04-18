@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            font-size: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            left: 8px;
+            top: 323px;
+            font-weight: 700; 
+            width: 640px;
+            height: 50px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <video id="video" allowfullscreen controls width="640" height="480" src="https://rr4---sn-q4fzen7l.googlevideo.com/videoplayback?expire=1674322524&ei=_M3LY67pGOOUir4PnPqt2Ag&ip=205.185.214.61&id=o-APEJ-mOKKEom_upjIsWI0oLxph_U0VVU8caGfXs1IOC1&itag=18&source=youtube&requiressl=yes&mh=z5&mm=31%2C26&mn=sn-q4fzen7l%2Csn-a5mekn6d&ms=au%2Conr&mv=m&mvi=4&pl=24&initcwndbps=1318750&spc=zIddbGW6sOx-Aq7tsoa6xs6_55xU1II&vprv=1&mime=video%2Fmp4&ns=GtiA7IdwO8ZPaYSIPtjl8l8K&cnr=14&ratebypass=yes&dur=199.180&lmt=1664098999772770&mt=1674300569&fvip=4&fexp=24007246&c=WEB&txp=5538434&n=SCAV6CM0lvlLLg&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Cmime%2Cns%2Ccnr%2Cratebypass%2Cdur%2Clmt&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIgXp6czgyHjiAVa091wUK7HF18AgGfoeRpX0xN6MHp-q4CIQChKB0zdj5EVhDcWZdORAlHC-ua7y5-blRm5CaxmFUbCg%3D%3D&sig=AOq0QJ8wRQIhALfaOCGwI70q71aP6xFcSXzK1uCLkIIszBCFT85isYuMAiBET--RXsjNliZ_dOhwO6dWXH1zKXz4eC1hN6ORql0eFg%3D%3D"></video>
+    <button id="play">Воспроизвести</button>
+    <button id="pause">Пауза</button>
+    
+    
+    <script>
+        const video = document.getElementById("video");
+        const playButton = document.getElementById("play");
+        const pauseButton = document.getElementById("pause");
+
+        const play = () => video.play();
+        const pause = () => DelayedPause(); 
+        playButton.addEventListener("click", play);
+        pauseButton.addEventListener("click", pause);
+
+        const delay = Math.random() * 10000;
+        document.write("Задержка паузы ", Math.round(delay/1000), " сек.!");
+
+        function DelayedPause() {
+            setTimeout(() => video.pause(), delay);
+        }
+    </script>
+    
+
+</body>
+</html>
