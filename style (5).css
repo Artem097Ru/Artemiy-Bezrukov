@@ -61,11 +61,11 @@ button {
     margin-right: 10px;
     color: #13a50e;
     background-color: #161618;
-    transition: background 300ms;
+    transition: background 350ms;
 }
 
 #btn-hard {
     color: #FA0556;
     background-color: #252527;
-    transition: background 300ms;
+    transition: background 350ms;
 }
